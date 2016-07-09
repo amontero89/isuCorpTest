@@ -1,0 +1,148 @@
+﻿@using IsuCorpTest.Resources
+@model IEnumerable<IsuCorpTest.Entities.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section pageHeader{
+    <div class="row clearfix">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+            <h2 class="mylabel-style">@Resources.RESERVATION_LIST</h2>
+        </div>
+        <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 ">
+            <p style="margin-top: 22px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. </p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 " style="float:right">
+            @Html.ActionLink(@Resources.CREATE_RESERVATION, "Create", null, new { @class = "btn btn-default mybtn-style" })
+       </div>
+        </div>
+}
+<div class="row clearfix">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 order-style">
+    @using (Html.BeginForm("OrderBy", "Reservation", FormMethod.Get, new { id = "order-by", pageNumber = ViewBag.selectedPage }))
+    {
+        var birthDateAsc = ViewBag.OrderTypeSelected != null && ViewBag.OrderTypeSelected == "BirthDate asc" ? "selected" : "";
+        var birthDateDesc = ViewBag.OrderTypeSelected != null && ViewBag.OrderTypeSelected == "BirthDate des" ? "selected" : "";
+        var contactNameAsc = ViewBag.OrderTypeSelected != null && ViewBag.OrderTypeSelected == "ContactName asc" ? "selected" : "";
+        var contactNameDesc = ViewBag.OrderTypeSelected != null && ViewBag.OrderTypeSelected == "ContactName des" ? "selected" : "";
+        var ranking = ViewBag.OrderTypeSelected != null && ViewBag.OrderTypeSelected == "Ranking des" ? "selected" : "";
+
+        <select name="orderType" place-holder="Order By" class="form-control">
+            <option value="BirthDate asc">@Resources.ORDER_BY_DATE_ASCENDING</option>
+            <option value="BirthDate des" @birthDateDesc>@Resources.ORDER_BY_DATE_DESCENDING</option>
+            <option value="ContactName asc" @contactNameAsc>@Resources.ORDER_BY_ALPHABETIC_ASCENDING</option>
+            <option value="ContactName des" @contactNameDesc>@Resources.ORDER_BY_ALPHABETIC_DESCENDING</option>
+            <option value="Ranking des" @ranking>@Resources.ORDER_BY_RANKING</option>
+        </select>
+    }
+        </div>
+</div>
+
+
+@foreach (var item in Model)
+{
+    <div class="row clearfix row-style">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 contact">
+            <div class="pull-left">
+                <img class="img-responsive" />
+            </div>
+            <div class="pull-left">
+                <span class="lead">@Html.DisplayFor(modelItem => item.ContactName)</span><br />
+                <span class="text-muted">@Html.DisplayFor(modelItem => item.BirthDate)</span>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 hidden-sm hidden-xs">
+            <span class="lead">@Resources.RANKING</span>
+            <br />
+            <select class="ranking" object-id="@item.Id">
+                <option value=""></option>
+                @for (int i = 1; i <= 5; i++)
+                {
+                    var selected = (item.Ranking == i ? "selected" : "");
+                    <option value="@i" @selected>@i</option>
+                }
+            </select>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 set-favorite" object="@item.Id">
+            @{
+                var isFavorite = (item.isFavorite.HasValue && item.isFavorite.Value) ? "cuore-on" : "cuore-off";
+            }
+            <div class="pull-right cuore @isFavorite"></div>
+            <div class="pull-right">
+                <span class="text-muted">@Resources.ADD_FAVORITES</span>&nbsp;
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 buttons">
+            @Html.ActionLink(@Resources.EDIT_BOTTON, "Edit", new { id = item.Id }, new { @class = "btn btn-default mybtn-style" })
+            @Html.ActionLink(@Resources.DELETE_BOTTON, "Delete", new { id = item.Id }, new { @class = "btn btn-default mybtn-style" })
+        </div>
+
+    </div>
+                }
+
+@*<table class="table">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactName)
+                </td>
+                <td>
+                    @Resources.RANKING
+                    <select class="ranking" object-id="@item.Id">
+                        <option value="" ></option>
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            var selected = (item.Ranking == i ? "selected" : "");
+                            <option value="@i" @selected>@i</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    @{
+                        var isFavorite = (item.isFavorite.HasValue && item.isFavorite.Value) ? "cuore-on" : "cuore-off";
+                    }
+                    <div class="set-favorite" object="@item.Id">
+                        @Resources.ADD_FAVORITES
+                        <span class="cuore @isFavorite"></span>
+                    </div>
+
+                </td>
+                <td>
+                    @Html.ActionLink(@Resources.EDIT_BOTTON, "Edit", new { id = item.Id }, new { @class = "btn btn-default mybtn-style" })
+                    @Html.ActionLink(@Resources.DELETE_BOTTON, "Delete", new { id = item.Id }, new { @class = "btn btn-default mybtn-style" })
+                </td>
+            </tr>
+                        }
+
+    </table>*@
+
+<ul class="pagination">
+    @Html.Hidden("pageNumber", (int)ViewBag.selectedPage)
+
+    @{
+        var firstDisable = ViewBag.selectedPage == 1 ? "disabled" : "";
+    }
+    <li class="@firstDisable"><a href="@Url.Action("Paginator", "Reservation", new {pageNumber = (int)ViewBag.selectedPage-1, orderType=ViewBag.OrderTypeSelected}) ">&laquo;</a></li>
+
+    @for (int i = 1; i <= ViewBag.pageCout; i++)
+    {
+        var active = ViewBag.selectedPage == i ? "active" : "";
+        <li class="@active">@Html.ActionLink(i.ToString(), "Paginator", "Reservation", new { pageNumber = i, orderType = ViewBag.OrderTypeSelected }, null)</li>
+    }
+    @{
+        var lastDisable = ViewBag.selectedPage == ViewBag.pageCout ? "disabled" : "";
+    }
+    <li class="@lastDisable"><a href="@Url.Action("Paginator", "Reservation", new {pageNumber = (int)ViewBag.selectedPage+1, orderType=ViewBag.OrderTypeSelected})">&raquo;</a></li>
+</ul>
+
+@section stylesCss {
+    @Styles.Render("~/Content/ranking")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/order")
+    @Scripts.Render("~/bundles/jranking")
+}
