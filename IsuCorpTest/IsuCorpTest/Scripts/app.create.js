@@ -2,4 +2,6 @@
 
     $('#BirthDate').datepicker();
 
+    $('#BodyText').Editor();
+
 });

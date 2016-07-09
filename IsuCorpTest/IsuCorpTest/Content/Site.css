@@ -26,12 +26,9 @@ textarea {
     border-radius: unset;
 }
 
-.button-style {
-    color: blue;
-}
-
 .set-favorite{
     cursor:pointer;
+    margin: 20px 0px 5px 0px;
 }
 
 .cuore {
@@ -53,17 +50,27 @@ textarea {
     background-color: darkgray;
     border-radius: unset;
     margin-top: 22px;
-    float:right
+    float:right;
+    margin: 13px 0px 0px 10px;
+}
+
+.reservationbtn-style {
+    color: white;
+    background-color: darkgray;
+    border-radius: unset;
+    margin-top: 22px;
+    float:right;
+    margin: 25px 0px 0px 10px;
 }
 
 .redbtn-style {
     color: white;
-    background-color: red;
+    background-color: #bb0000;
     border-radius: unset;
 }
 
 .mylabel-style {
-    color: crimson;
+    color:  #bb0000;
 }
 
 .page-header {
@@ -86,6 +93,11 @@ textarea {
 
 select.form-control {
    border-radius: 0px !important;
+}
+
+.isucorp-style {
+    color:white;
+    font-size:medium;
 }
 
 @media (min-width: 1200px) {

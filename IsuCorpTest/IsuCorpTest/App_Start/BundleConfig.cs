@@ -25,7 +25,8 @@ namespace IsuCorpTest
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Scripts/bootstrap-datepicker.min.js"));
+                      "~/Scripts/bootstrap-datepicker.min.js",
+                      "~/Scripts/editor.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/order").Include(
                       "~/Scripts/order.js", "~/Scripts/app.index.js"));
@@ -36,7 +37,9 @@ namespace IsuCorpTest
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-datepicker3.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/font-awesome/font-awesome.min.css",
+                      "~/Content/site.css",
+                      "~/Content/editor.css"));
 
             bundles.Add(new StyleBundle("~/Content/ranking").Include(
                       "~/Content/css-stars.css"));
