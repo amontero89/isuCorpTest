@@ -8,6 +8,12 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    /*background-color: #f8f8f8;*/
+}
+
+.body-content-list {
+    padding-left: 15px;
+    padding-right: 15px;
     background-color: #f8f8f8;
 }
 
@@ -19,30 +25,56 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+input[type=text],
+input[type=tel],
 select,
 textarea {
-    max-width: 280px;
-    border-radius: unset;
+    border-radius: 0px;
+    background-repeat: no-repeat;
+    padding-left: 33px !important;
+    background-position: 5px;
+    background-size: 25px;
+    height: 40px !important;
 }
 
-.set-favorite{
-    cursor:pointer;
+select {
+    background-image: url("images/sort.png");
+}
+
+.input-name {
+    background-image: url("images/name.png");
+}
+
+.input-contact {
+    background-image: url("images/contact.png");
+}
+
+.input-phone {
+    background-image: url("images/phone.png");
+}
+
+.input-calendar {
+    background-image: url("images/calendar.png");
+}
+
+
+.set-favorite {
+    cursor: pointer;
     margin: 20px 0px 5px 0px;
 }
 
 .cuore {
     display: inline-block;
     width: 26px;
-    height:26px;
+    height: 26px;
 }
 
-.cuore-on{
-    background-image:url("images/heart-on.png");
+.cuore-on {
+    background-image: url("images/heart-on.png");
 }
 
-.cuore-off{
-    background-image:url("images/heart-off.png");
+.cuore-off {
+    background-image: url("images/heart-off.png");
 }
 
 .mybtn-style {
@@ -50,8 +82,8 @@ textarea {
     background-color: darkgray;
     border-radius: unset;
     margin-top: 22px;
-    float:right;
-    margin: 13px 0px 0px 10px;
+    float: right;
+    margin: 15px 0px 0px 0px;
 }
 
 .reservationbtn-style {
@@ -59,7 +91,7 @@ textarea {
     background-color: darkgray;
     border-radius: unset;
     margin-top: 22px;
-    float:right;
+    float: right;
     margin: 25px 0px 0px 10px;
 }
 
@@ -70,18 +102,25 @@ textarea {
 }
 
 .mylabel-style {
-    color:  #bb0000;
+    color: #bb0000;
 }
 
 .page-header {
-    background-color:#f8f8f8;
+    background-color: #f8f8f8;
     margin: 60px 0px 10px 0px;
+}
+
+.page-footer {
+    background-color: #f8f8f8;
+    margin: 50px 0px 0px 0px;
+    height: 50px;
 }
 
 .row-style {
     margin: 10px 0px 10px 0px;
     background-color: #efefef;
 }
+
 .banner-style {
     background-image: url("images/banner.png");
     height: 120px;
@@ -91,20 +130,46 @@ textarea {
     margin: 10px 0px 0px 0px;
 }
 
+.fovorite-text-on {
+    color: black;
+}
+
 select.form-control {
-   border-radius: 0px !important;
+    border-radius: 0px !important;
 }
 
 .isucorp-style {
-    color:white;
-    font-size:medium;
+    color: white !important;
+    font-size: 50px !important;
+    margin: 30px 0px 0px 30px;
 }
+
+.banner-link-style {
+    margin: 20px 10px 0px 0px !important;
+    color: white;
+}
+
+.favorite-style {
+    margin: 0px 5px 0px 0px;
+}
+
+.form-components {
+    background-color: #f8f8f8 !important;
+    padding-top: 10px;
+}
+
+.form-group-offset {
+    margin-right: -30px !important;
+    margin-left: -30px !important;
+}
+
+.Editor-editor {
+    background-color: white;
+}
+
 
 @media (min-width: 1200px) {
-   .container {
-       max-width: 970px;
-   }
+    .container {
+        max-width: 970px;
+    }
 }
-
-
-

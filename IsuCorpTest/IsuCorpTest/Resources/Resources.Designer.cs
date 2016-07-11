@@ -70,6 +70,15 @@ namespace IsuCorpTest.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RESERVATION LIST.
+        /// </summary>
+        public static string BACK_TO_LIST {
+            get {
+                return ResourceManager.GetString("BACK_TO_LIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Birth Date.
         /// </summary>
         public static string BIRTH_DATE {
@@ -79,7 +88,7 @@ namespace IsuCorpTest.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contact Name.
+        ///   Looks up a localized string similar to Contact Name....
         /// </summary>
         public static string CONTACT_NAME {
             get {
@@ -88,7 +97,7 @@ namespace IsuCorpTest.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contact Type Name.
+        ///   Looks up a localized string similar to Contact Type.
         /// </summary>
         public static string CONTACT_TYPE_NAME {
             get {
@@ -97,16 +106,25 @@ namespace IsuCorpTest.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Reservation.
+        ///   Looks up a localized string similar to CREATE RESERVATION.
         /// </summary>
-        public static string CREATE_RESERVATION {
+        public static string CREATE_RESERVATION_BUTTON {
             get {
-                return ResourceManager.GetString("CREATE_RESERVATION", resourceCulture);
+                return ResourceManager.GetString("CREATE_RESERVATION_BUTTON", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to Create Reservation.
+        /// </summary>
+        public static string CREATE_RESERVATION_LABEL {
+            get {
+                return ResourceManager.GetString("CREATE_RESERVATION_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE.
         /// </summary>
         public static string DELETE_BOTTON {
             get {
@@ -115,7 +133,7 @@ namespace IsuCorpTest.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit.
+        ///   Looks up a localized string similar to EDIT.
         /// </summary>
         public static string EDIT_BOTTON {
             get {
@@ -196,11 +214,47 @@ namespace IsuCorpTest.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This fild is required.
+        /// </summary>
+        public static string REQUIRED {
+            get {
+                return ResourceManager.GetString("REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reservations List.
         /// </summary>
         public static string RESERVATION_LIST {
             get {
                 return ResourceManager.GetString("RESERVATION_LIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string SEND_BUTTON {
+            get {
+                return ResourceManager.GetString("SEND_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ◄ Create Reservation.
+        /// </summary>
+        public static string SMALL_CREATE_RESERVATION {
+            get {
+                return ResourceManager.GetString("SMALL_CREATE_RESERVATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ◄ Reservation List.
+        /// </summary>
+        public static string SMALL_RESERVATION_LIST {
+            get {
+                return ResourceManager.GetString("SMALL_RESERVATION_LIST", resourceCulture);
             }
         }
         

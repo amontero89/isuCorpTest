@@ -41,9 +41,11 @@
                     if (data.isFavorite) {
                         $('.cuore', element).removeClass('cuore-off');
                         $('.cuore', element).addClass('cuore-on');
+                        $('.favorite-style', element).addClass('fovorite-text-on');
                     } else {
                         $('.cuore', element).removeClass('cuore-on');
                         $('.cuore', element).addClass('cuore-off');
+                        $('.favorite-style', element).removeClass('fovorite-text-off');
                     }
                             
                 }

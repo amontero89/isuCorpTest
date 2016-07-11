@@ -11,20 +11,20 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top banner-style">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            <div class="navbar-header">                
                 @Html.ActionLink("ISUCorp", "Index", "Reservation", new { area = "" }, new { @class = "navbar-brand isucorp-style"})
+                <p class="hidden-sm hidden-xs" style="color:white ; font-size:small" >World Class Software Development</p>
+                <div class="pull-right">
+                    @RenderSection("banner", required: true)
+                </div>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("English", "LanguageOptions", "Reservation", new { language = "en" }, null)</li>
-                    <li>@Html.ActionLink("Español", "LanguageOptions", "Reservation", new { language = "es" }, null)</li>
+                <ul class="nav navbar-nav hidden-sm hidden-xs">
+                    <li style="margin: 35px 0px 0px 30px">@Html.ActionLink("English", "LanguageOptions", "Reservation", new { language = "en" }, null)</li>
+                    <li style="margin: 35px 0px 0px 30px">@Html.ActionLink("Español", "LanguageOptions", "Reservation", new { language = "es" }, null)</li>
                 </ul>
             </div>
+            
         </div>
         </div>
     <div class="page-header">
@@ -32,12 +32,13 @@
             @RenderSection("pageHeader", required: false)
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <div class="container">
+        @RenderBody()        
+    </div>
+    <div class="page-footer">
+        <div class="container">
+            @RenderSection("pageFooter", required: false)
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

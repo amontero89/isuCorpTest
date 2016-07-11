@@ -127,7 +127,7 @@ namespace IsuCorpTest.Controllers
             ViewBag.selectedPage = pageNumber;
             ViewBag.pageCout = (orderReservations.Count / 10)+1;
 
-            return View("Index", orderReservations);
+            return View("Index", reservations);
         }
 
         // Lenguage Funtions

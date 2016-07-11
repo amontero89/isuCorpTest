@@ -120,23 +120,29 @@
   <data name="ADD_FAVORITES" xml:space="preserve">
     <value>Add Favorite</value>
   </data>
+  <data name="BACK_TO_LIST" xml:space="preserve">
+    <value>RESERVATION LIST</value>
+  </data>
   <data name="BIRTH_DATE" xml:space="preserve">
     <value>Birth Date</value>
   </data>
   <data name="CONTACT_NAME" xml:space="preserve">
-    <value>Contact Name</value>
+    <value>Contact Name...</value>
   </data>
   <data name="CONTACT_TYPE_NAME" xml:space="preserve">
-    <value>Contact Type Name</value>
+    <value>Contact Type</value>
   </data>
-  <data name="CREATE_RESERVATION" xml:space="preserve">
+  <data name="CREATE_RESERVATION_BUTTON" xml:space="preserve">
+    <value>CREATE RESERVATION</value>
+  </data>
+  <data name="CREATE_RESERVATION_LABEL" xml:space="preserve">
     <value>Create Reservation</value>
   </data>
   <data name="DELETE_BOTTON" xml:space="preserve">
-    <value>Delete</value>
+    <value>DELETE</value>
   </data>
   <data name="EDIT_BOTTON" xml:space="preserve">
-    <value>Edit</value>
+    <value>EDIT</value>
   </data>
   <data name="EDIT_RESERVATION" xml:space="preserve">
     <value>Edit Reservation</value>
@@ -162,8 +168,20 @@
   <data name="RANKING" xml:space="preserve">
     <value>Ranking</value>
   </data>
+  <data name="REQUIRED" xml:space="preserve">
+    <value>This fild is required</value>
+  </data>
   <data name="RESERVATION_LIST" xml:space="preserve">
     <value>Reservations List</value>
+  </data>
+  <data name="SEND_BUTTON" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SMALL_CREATE_RESERVATION" xml:space="preserve">
+    <value>◄ Create Reservation</value>
+  </data>
+  <data name="SMALL_RESERVATION_LIST" xml:space="preserve">
+    <value>◄ Reservation List</value>
   </data>
   <data name="SORT_BY" xml:space="preserve">
     <value>Sort By</value>

@@ -120,16 +120,22 @@
   <data name="ADD_FAVORITES" xml:space="preserve">
     <value>Añadir a Favoritos</value>
   </data>
+  <data name="BACK_TO_LIST" xml:space="preserve">
+    <value>LISTA RESERVACIÓN</value>
+  </data>
   <data name="BIRTH_DATE" xml:space="preserve">
     <value>Fecha de Nacimiento</value>
   </data>
   <data name="CONTACT_NAME" xml:space="preserve">
-    <value>Nombre de Contacto</value>
+    <value>Nombre de Contacto...</value>
   </data>
   <data name="CONTACT_TYPE_NAME" xml:space="preserve">
     <value>Tipo de Contacto</value>
   </data>
-  <data name="CREATE_RESERVATION" xml:space="preserve">
+  <data name="CREATE_RESERVATION_BUTTON" xml:space="preserve">
+    <value>CREAR RESERVACIÓN</value>
+  </data>
+  <data name="CREATE_RESERVATION_LABEL" xml:space="preserve">
     <value>Crear Reservación</value>
   </data>
   <data name="DELETE_BOTTON" xml:space="preserve">
@@ -164,6 +170,15 @@
   </data>
   <data name="RESERVATION_LIST" xml:space="preserve">
     <value>Lista de Reservación</value>
+  </data>
+  <data name="SEND_BUTTON" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="SMALL_CREATE_RESERVATION" xml:space="preserve">
+    <value>◄ Crear Reservación</value>
+  </data>
+  <data name="SMALL_RESERVATION_LIST" xml:space="preserve">
+    <value>◄ Reservation List</value>
   </data>
   <data name="SORT_BY" xml:space="preserve">
     <value>Ordenar por</value>

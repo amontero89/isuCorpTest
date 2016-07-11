@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
+using IsuCorpTest.Resources;
 
 namespace IsuCorpTest.Entities.Metadata
 {
     public class ReservationMetadata
     {
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName ="")]
         [StringLength(160)]
         public string ContactName { get; set; }
 
@@ -28,6 +30,7 @@ namespace IsuCorpTest.Entities.Metadata
 
         public bool isFavorite { get; set; }
 
+        [AllowHtml]
         public string BodyText { get; set; }
     }
 }
