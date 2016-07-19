@@ -23,9 +23,12 @@ namespace IsuCorpTest.Controllers
         public ActionResult Index()
         {
             var reservationList = dbContext.Reservations.ToList();
-            ViewBag.pageCout = (reservationList.Count / 10) + 1;
+
             ViewBag.selectedPage = 1;
-            return View(reservationList);
+            var reservationCount = 0;
+            var reservations = reservationList.GetPage(1, 10, out reservationCount);
+            ViewBag.pageCout = (reservationCount / 10) + ((reservationCount % 10) > 0 ? 1 : 0);
+            return View(reservations);
         }
 
         // GET: Reservation/Create
@@ -71,20 +74,28 @@ namespace IsuCorpTest.Controllers
         {
             try
             {
-                var reservationContext = dbContext.Reservations.Attach(reservation);
-
-                if (reservationContext == null)
-                    return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
-                else
+                if (ModelState.IsValid)
                 {
-                    dbContext.Entry(reservationContext).State = System.Data.Entity.EntityState.Modified;
-                    dbContext.SaveChanges();
-                }
+                    var reservationContext = dbContext.Reservations.Attach(reservation);
 
-                return RedirectToAction("Index");
+                    if (reservationContext == null)
+                        return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+                    else
+                    {
+                        dbContext.Entry(reservationContext).State = System.Data.Entity.EntityState.Modified;
+                        dbContext.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
+                var contactTypes = dbContext.ContactTypes.ToList().Select(item => new SelectListItem() { Value = item.Id.ToString(), Text = item.ContacTypeName, Selected = item.Id == reservation.ContactTypeId });
+                ViewBag.ContactTypeList = contactTypes;
+                return View();
+
             }
-            catch
+            catch (Exception ex)
             {
+                var contactTypes = dbContext.ContactTypes.ToList().Select(item => new SelectListItem() { Value = item.Id.ToString(), Text = item.ContacTypeName, Selected = item.Id == reservation.ContactTypeId });
+                ViewBag.ContactTypeList = contactTypes;
                 return View();
             }
         }
@@ -122,10 +133,10 @@ namespace IsuCorpTest.Controllers
             var orderReservations = sorter.Sort(dbContext.Reservations).ToList();
             var reservationCount = 0;
             var reservations = orderReservations.GetPage(pageNumber, 10, out reservationCount);
-            
+
             ViewBag.OrderTypeSelected = orderType;
             ViewBag.selectedPage = pageNumber;
-            ViewBag.pageCout = (orderReservations.Count / 10)+1;
+            ViewBag.pageCout = (reservationCount / 10) + ((reservationCount % 10) > 0 ? 1 : 0);
 
             return View("Index", reservations);
         }
@@ -175,7 +186,7 @@ namespace IsuCorpTest.Controllers
             var reservationCount = 0;
             var reservations = reservationOrderList.GetPage(pageNumber, 10, out reservationCount);
 
-            ViewBag.pageCout = (reservationCount/10) +1;
+            ViewBag.pageCout = (reservationCount / 10) + ((reservationCount % 10) > 0 ? 1 : 0);
             ViewBag.selectedPage = pageNumber;
             ViewBag.OrderTypeSelected = orderType;
 

@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    $('#BirthDate').datepicker();
+    $('#BirthDate').datepicker({ format: $('#BirthDate').attr('format') });
 
     $('div#BodyText').Editor();
     $('div#BodyText').Editor('setText', $('#BodyText').val());

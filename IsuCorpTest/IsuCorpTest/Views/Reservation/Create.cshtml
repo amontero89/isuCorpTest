@@ -27,7 +27,7 @@
 
 <div class="body-content">
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create", "Reservation", FormMethod.Post, new { id = "reservation-form" }))
     {
         @Html.AntiForgeryToken()
 
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 ">
-                        @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-calendar", @placeholder = Resources.BIRTH_DATE, @type = "text" } })
+                        @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-calendar", @placeholder = Resources.BIRTH_DATE, @type = "text", @format=Resources.DATE_FORMAT } })
                         @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
                     </div>
                 </div>

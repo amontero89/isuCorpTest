@@ -120,6 +120,9 @@
   <data name="ADD_FAVORITES" xml:space="preserve">
     <value>Añadir a Favoritos</value>
   </data>
+  <data name="ATTRIBUTE_REQUIRED" xml:space="preserve">
+    <value>Debe entrar valores en este campo</value>
+  </data>
   <data name="BACK_TO_LIST" xml:space="preserve">
     <value>LISTA RESERVACIÓN</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="CREATE_RESERVATION_LABEL" xml:space="preserve">
     <value>Crear Reservación</value>
+  </data>
+  <data name="DATE_FORMAT" xml:space="preserve">
+    <value>dd/mm/yyyy</value>
   </data>
   <data name="DELETE_BOTTON" xml:space="preserve">
     <value>Eliminar</value>

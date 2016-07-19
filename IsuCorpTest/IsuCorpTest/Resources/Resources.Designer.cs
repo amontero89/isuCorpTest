@@ -70,6 +70,15 @@ namespace IsuCorpTest.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must enter value for this field .
+        /// </summary>
+        public static string ATTRIBUTE_REQUIRED {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RESERVATION LIST.
         /// </summary>
         public static string BACK_TO_LIST {
@@ -120,6 +129,15 @@ namespace IsuCorpTest.Resources {
         public static string CREATE_RESERVATION_LABEL {
             get {
                 return ResourceManager.GetString("CREATE_RESERVATION_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mm/dd/yyyy.
+        /// </summary>
+        public static string DATE_FORMAT {
+            get {
+                return ResourceManager.GetString("DATE_FORMAT", resourceCulture);
             }
         }
         

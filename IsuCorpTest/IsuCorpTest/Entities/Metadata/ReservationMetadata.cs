@@ -10,7 +10,7 @@ namespace IsuCorpTest.Entities.Metadata
 {
     public class ReservationMetadata
     {
-        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName ="")]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "ATTRIBUTE_REQUIRED")]
         [StringLength(160)]
         public string ContactName { get; set; }
 
@@ -20,9 +20,9 @@ namespace IsuCorpTest.Entities.Metadata
         [StringLength(15)]
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
-
-        [Required]
-        [DataType(DataType.Date)]
+    
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "ATTRIBUTE_REQUIRED")]
+        [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
 
         [Range(1, 5)]
