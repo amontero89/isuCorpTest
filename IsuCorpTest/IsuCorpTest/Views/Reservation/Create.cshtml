@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="form-group form-components">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 ">
-                        @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control input-name", @placeholder = Resources.CONTACT_NAME } })
+                        @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control input-name", @placeholder = Resources.CONTACT_NAME, @data_bind = "value: contactName, valueUpdate: 'afterkeydown'" } })
                         @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
                     </div>
 
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 ">
-                        @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-calendar", @placeholder = Resources.BIRTH_DATE, @type = "text", @format=Resources.DATE_FORMAT } })
+                        @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-calendar", @placeholder = Resources.BIRTH_DATE, @type = "text", @format=Resources.DATE_FORMAT, @data_bind = "value: birthDate, valueUpdate: 'afterkeydown' " } })
                         @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -67,7 +67,7 @@
 
                 <div class="form-group form-group-offset" style="background-color: #efefef">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pull-right">
-                        <input type="submit" value=@Resources.SEND_BUTTON class="btn btn-default btn-block redbtn-style" />
+                        <input type="submit" value=@Resources.SEND_BUTTON class="btn btn-default btn-block redbtn-style" data-bind="enable: enableButton" />
                     </div>
                 </div>
 
@@ -85,5 +85,7 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/create")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/create-view-model")
 
 }

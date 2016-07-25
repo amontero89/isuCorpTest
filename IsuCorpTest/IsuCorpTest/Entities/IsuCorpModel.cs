@@ -22,6 +22,12 @@ namespace IsuCorpTest.Entities
         
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<ContactType> ContactTypes { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ContactType>().MapToStoredProcedures();
+            modelBuilder.Entity<Reservation>().MapToStoredProcedures();
+        }
     }
 
     //public class MyEntity

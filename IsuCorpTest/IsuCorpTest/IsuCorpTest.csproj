@@ -148,6 +148,10 @@
     <Compile Include="Migrations\201607050346203_UpdateModel.Designer.cs">
       <DependentUpon>201607050346203_UpdateModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607250201242_addStoreProcedures.cs" />
+    <Compile Include="Migrations\201607250201242_addStoreProcedures.Designer.cs">
+      <DependentUpon>201607250201242_addStoreProcedures.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,7 +199,9 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\createViewModel.js" />
     <Content Include="Scripts\editor.js" />
+    <Content Include="Scripts\editViewModel.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -204,6 +210,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-3.4.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\order.js" />
     <Content Include="Scripts\respond.js" />
@@ -241,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607050346203_UpdateModel.resx">
       <DependentUpon>201607050346203_UpdateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607250201242_addStoreProcedures.resx">
+      <DependentUpon>201607250201242_addStoreProcedures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resources.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -17,6 +17,15 @@ namespace IsuCorpTest
             bundles.Add(new ScriptBundle("~/bundles/jranking").Include(
                         "~/Scripts/jquery.barrating.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+                        "~/Scripts/knockout-3.4.0.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/create-view-model").Include(
+                        "~/Scripts/createViewModel.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/edit-view-model").Include(
+            "~/Scripts/editViewModel.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(

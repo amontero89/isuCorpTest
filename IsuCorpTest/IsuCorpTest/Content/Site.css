@@ -167,6 +167,9 @@ select.form-control {
     background-color: white;
 }
 
+.redbtn-style[disabled] {
+   background-color:  #bb0000!important;
+}
 
 @media (min-width: 1200px) {
     .container {
